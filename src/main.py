@@ -20,24 +20,24 @@ def parse_input_file(input_file):
         expenses_list_temp = [re.sub('[\n]', '', x).split() for x in expenses]
         expenses_list = [(x[0], float(x[1]), x[2]) for x in expenses_list_temp]
 
-        print("=================================================")
+        print('-' * 75)
         print("INPUT")
         print "Reading input file", args.input_file
         print "Input Members", members_list
         print "Input Expenses", expenses_list
-        print("=================================================")
+        print('-' * 75)
 
         return members_list, expenses_list
 
 def print_output(transactions):
-    print("=================================================")
+    print('-' * 75)
     print("OUTPUT")
     for x in transactions:
         print x[0], '->', x[1], x[2]
-    print("=================================================")
+    print('-' * 75)
 
 if __name__ == '__main__':
-    print("*************************************************")
+    print("*" * 75)
     print("SPLITWISE EXPENSE DISTRIBUTION")
 
     parser = argparse.ArgumentParser(description=
@@ -51,5 +51,5 @@ if __name__ == '__main__':
     else:
         print("No input file provided! Please see usages. Hence, exiting.")
 
-    print("*************************************************")
+    print("*" * 75)
 
